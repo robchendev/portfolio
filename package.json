@@ -1,9 +1,9 @@
 {
-  "name": "portfolio",
+  "name": "vikelabs",
   "version": "1.0.0",
   "private": true,
-  "description": "portfolio",
-  "author": "Robert Chen",
+  "description": "VikeLabs.ca",
+  "author": "vikelabs",
   "keywords": [
     "gatsby"
   ],
@@ -20,17 +20,21 @@
     "@emotion/styled": "^11.8.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/react-helmet": "^6.1.5",
     "babel-plugin-styled-components": "^2.0.6",
+    "fast_array_intersect": "^1.1.0",
     "framer-motion": "^6.2.6",
     "gatsby": "^4.7.2",
     "gatsby-plugin-emotion": "^7.7.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.7.0",
-    "gatsby-plugin-manifest": "^4.12.1",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-sharp": "^4.9.0",
     "gatsby-plugin-sitemap": "^5.7.0",
     "gatsby-plugin-styled-components": "^5.9.0",
+    "gatsby-remark-autolink-headers": "^5.12.1",
+    "gatsby-remark-embed-video": "^3.1.1",
     "gatsby-remark-images": "^6.9.0",
     "gatsby-source-filesystem": "^4.9.0",
     "gatsby-transformer-remark": "^5.9.0",
@@ -45,6 +49,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.9.2"
+    "@emotion/babel-plugin": "^11.9.2",
+    "@octokit/core": "^3.6.0"
   }
 }
