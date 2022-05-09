@@ -85,7 +85,7 @@ const WordCount = styled.span`
 `
 
 
-const Home = () => {
+const About = () => {
   const [windowSize, setWindowSize] = useState(null);
   const [textAreaHeight, setTextAreaHeight] = useState(null);
 
@@ -166,10 +166,10 @@ const Home = () => {
   }, [])
 
   return (
-    <Layout title="Robert Chen">
-      
+    <Layout title="About">
+
     </Layout>
   )
 }
 
-export default Home
+export default About
