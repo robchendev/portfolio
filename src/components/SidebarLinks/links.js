@@ -17,11 +17,6 @@ export const internalLinks = [
     label: "Projects",
     icon: <HiOutlineCode />,
     link: "/p"
-  },
-  {
-    label: "Blog",
-    icon: <HiOutlineBookOpen />,
-    link: "/b"
   }
 ]
 export const externalLinks = [
