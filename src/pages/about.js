@@ -167,22 +167,7 @@ const About = () => {
 
   return (
     <Layout title="About">
-      <WindowHeader />
-      <TerminalContainer>
-        <Opening>We are VikeLabs.</Opening>
-        <DirectoryBar id="directoryBar" />
-        <DirectoryBarSeperator />
-        <ContentBox>
-          <LineNumbers id="lineNumbers"></LineNumbers>
-          <Content id="content" onInput={reportTextAreaChange}
-            defaultValue={`VikeLabs is a collective of students who learn to build, deploy, and test software quickly. We view UVic as a kind of laboratory for testing solutions to problems that exist within the UVic community. We limit ourselves to the UVic community because it's much easier to deploy and test solutions to users where we are in close proximity to them and their problems.\n\nWe accept members from every faculty who have an interest in product design/research, software development, business, marketing, or product management.\n\nJoin Us.`}></Content>
-        </ContentBox>
-        <ContentMeta>
-          <CaretPosition id="caretPosition">Pos X</CaretPosition>
-          <SelectionCount id="selectionCount">(XX selected)</SelectionCount>
-          <WordCount id="wordCount">Word Count: XXX</WordCount>
-        </ContentMeta>
-      </TerminalContainer>
+
     </Layout>
   )
 }

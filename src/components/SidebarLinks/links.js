@@ -3,16 +3,16 @@ import { HiOutlineCode, HiOutlineUserGroup, HiOutlineHome, HiOutlineBookOpen } f
 import { FaGithub, FaDiscord } from 'react-icons/fa'
 
 export const internalLinks = [
-  {
-    label: "$HOME",
-    icon: <HiOutlineHome />,
-    link: "/"
-  },
-  {
-    label: "About",
-    icon: <HiOutlineUserGroup />,
-    link: "/about"
-  },
+  // {
+  //   label: "$HOME",
+  //   icon: <HiOutlineHome />,
+  //   link: "/"
+  // },
+  // {
+  //   label: "About",
+  //   icon: <HiOutlineUserGroup />,
+  //   link: "/about"
+  // },
   {
     label: "Projects",
     icon: <HiOutlineCode />,
@@ -28,11 +28,6 @@ export const externalLinks = [
   {
     label: "GitHub",
     icon: <FaGithub />,
-    link: "https://github.com/vikelabs/",
-  },
-  {
-    label: "Discord",
-    icon: <FaDiscord />,
-    link: "https://discord.gg/FcpU2Xm5dD",
-  },
+    link: "https://github.com/robchendev/",
+  }
 ]

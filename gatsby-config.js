@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `VikeLabs`,
-    description: `VikeLabs Website`,
-    siteUrl: `https://vikelabs.ca`
+    title: `Robert Chen`,
+    description: `Robert Chen Developer Portfolio Website`,
+    siteUrl: `https://robchendev.com`
   },
   plugins: ["gatsby-remark-embed-video", `gatsby-plugin-netlify`, "gatsby-plugin-emotion",
     {

@@ -37,7 +37,7 @@ const SearchBar = ({ title, slug, description, placeholder, data }) => {
           <ProjectsText>{title}</ProjectsText>
           <Line>{description}</Line>
           <ColoredPart>
-            <Purple>user@vikelabs.ca</Purple>
+            <Purple>user@robchendev.com</Purple>
             <WBColor>:</WBColor>
             <Green>~/{slug}</Green>
           </ColoredPart>
@@ -62,7 +62,9 @@ const SearchBar = ({ title, slug, description, placeholder, data }) => {
             key={item.frontmatter.title}
             title={item.frontmatter.title}
             description={item.frontmatter.description}
-            link={item.frontmatter.github}
+            github={item.frontmatter.github}
+            link={item.frontmatter.link}
+            stack={item.frontmatter.stack}
           />
         ))}
     </div>

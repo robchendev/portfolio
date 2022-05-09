@@ -166,23 +166,8 @@ const Home = () => {
   }, [])
 
   return (
-    <Layout title="Vikelabs">
-      <WindowHeader />
-      <TerminalContainer>
-        <Opening>Build an app in 4 months.</Opening>
-        <DirectoryBar id="directoryBar" />
-        <DirectoryBarSeperator />
-        <ContentBox>
-          <LineNumbers id="lineNumbers"></LineNumbers>
-          <Content id="content" onInput={reportTextAreaChange}
-            defaultValue={`VikeLabs is a team of UVic students who build apps to learn more about software development, product management, and design.\n\nEach semester starts out with a call for ideas from our members. The VikeLabs executive team will then review new idea proposals to ensure they make sense to include under our umbrella. Each team member then has the opportunity to rank their preferred projects and state who they want to work with (so we don't break up people who joined together). The executive team, working with team leads, will then decide who goes on what team and why.\n\nStudents work in teams to design, build and iterate on a software application that can be tested and validated by UVic students. Think of UVic as a laboratory for testing out products that people want to use (hence the name VikeLabs).\n\nUniversities are a phenomenal proving ground for many software products. Our close proximity to so many people with so many problems provides us with an opportunity to investigate and iterate on solutions quickly and inexpensively. Since we are students ourselves, we find it very natural to empathize with our target users. Once we've proved that we can effectively solve a problem for UVic students, teams are encouraged to think about how they can serve larger demographics.\n\nAt the end of they day, if you want to build something, people are the only thing that matter: the people you're building for, and the people you're building with. Joining VikeLabs will give you access to a network of students and software industry professionals who are passionate about building things, so that if you decide to take the leap into building things that you want people to buy - whether at your own startup or an established company - you can tap into a group of people who you've worked with and can trust.`}></Content>
-        </ContentBox>
-        <ContentMeta>
-          <CaretPosition id="caretPosition">Pos X</CaretPosition>
-          <SelectionCount id="selectionCount">(XX selected)</SelectionCount>
-          <WordCount id="wordCount">Word Count: XXX</WordCount>
-        </ContentMeta>
-      </TerminalContainer>
+    <Layout title="Robert Chen">
+      
     </Layout>
   )
 }

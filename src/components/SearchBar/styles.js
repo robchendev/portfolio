@@ -59,7 +59,7 @@ export const Search = styled.span`
     letter-spacing: inherit;
     font-size: 1em;
     //24 char, 0.6em per char
-    width: calc(100% - (25 * 0.6em) - 2em);
+    width: calc(100% - (28 * 0.64em));
     ${maxq[1]} {
       width: calc(100% - (4 * 0.6em) - 1em);
     }

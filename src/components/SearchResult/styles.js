@@ -52,6 +52,15 @@ export const Excerpt = styled.p`
   overflow: hidden;
   margin-bottom: 0 !important; // temporary probably
 `
+export const Stack = styled.p`
+  color: var(--color-orange, ${COLORS.orange.light});
+`
+export const EmbedContainer = styled.div`
+  border-radius: calc(${v.borderRadius} * 2);
+  margin-right: 3.5em;
+  overflow: hidden;
+  position: relative;
+`
 export const LinkBtnContainer = styled.div`
   position: absolute;
   top: 0;

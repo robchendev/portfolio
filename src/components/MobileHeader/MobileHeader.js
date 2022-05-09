@@ -19,7 +19,7 @@ const MobileHeader = () => {
 				<MobileContainer>
 					<Logo>
 						<MobileHeaderLink to="/">
-							<h2>VikeLabs</h2>
+							<h2>robchendev</h2>
 						</MobileHeaderLink>
 					</Logo>
 					<MenuIcon onClick={() => showSidebar()}>

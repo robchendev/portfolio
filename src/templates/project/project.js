@@ -14,7 +14,7 @@ import ReactTooltip from 'react-tooltip';
 function ProjectDetails({ data }) {
   const { html } = data.allInfo;
   const {
-    title, description, github, members
+    title, description, github, stack
   } = data.allInfo.frontmatter;
   return (
     <Layout title={title}>
@@ -53,10 +53,7 @@ export const query = graphql`
         title
         description
         github
-        members {
-          name
-          role
-        }
+        stack
       }
     }
   }

@@ -1,9 +1,9 @@
 {
-  "name": "vikelabs",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "VikeLabs.ca",
-  "author": "vikelabs",
+  "description": "robchendev.com",
+  "author": "portfolio",
   "keywords": [
     "gatsby"
   ],

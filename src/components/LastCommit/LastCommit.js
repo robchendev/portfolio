@@ -11,7 +11,7 @@ const LastCommit = ({ github }) => {
   useEffect(() => {
     async function getRequest () {
       try {
-        const owner = 'vikelabs',
+        const owner = 'portfolio',
         repo = github,
         perPage = 1;
         const latestCommit = await octokit.request(

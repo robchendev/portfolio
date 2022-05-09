@@ -9,7 +9,7 @@ const LinkBtn = ({ github }) => {
   // Ignore it.
 
   return (
-    <a target="_blank" href={`https://github.com/vikelabs/${github}`}>
+    <a target="_blank" href={`https://github.com/robchendev/${github}`}>
       <GitHubButton onClick={(e) => e.stopPropagation()}>
         <UnChecked><FaGithub /></UnChecked>
       </GitHubButton>
