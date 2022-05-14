@@ -119,7 +119,9 @@ const Divider = () => {
 
    return (
       <DividerContainer>
-         {Array(numEpaulets).fill(<Epaulet />)}
+         {typeof window !== 'undefined' &&
+            Array(numEpaulets).fill(<Epaulet />)
+         }
       </DividerContainer>
   )
 }
