@@ -1,0 +1,4 @@
+{
+  "module": "esnext",
+  "moduleResolution": "node"
+}
