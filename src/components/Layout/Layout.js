@@ -1,61 +1,150 @@
-import React from "react"
-import Sidebar from "../Sidebar/Sidebar"
-import { MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
-import { Helmet } from "react-helmet"
-import { globalStyle } from "../../styles/globalstyles/globalStyles"
-import { COLORS,
-  COLOR_MODE_KEY,
-  INITIAL_COLOR_MODE_CSS_PROP
-} from '../../styles/globalstyles/theme'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { globalStyle } from '../../styles/globalstyles'
 import { Global } from '@emotion/react'
-import MobileHeader from "../MobileHeader/MobileHeader"
+import styled from '@emotion/styled'
+import Background from '../graphics/background'
+import { colors } from '../../styles/theme'
+import Overlay from '../graphics/overlay'
+import Divider from '../graphics/divider/divider'
+import Nav from '../Nav/Nav'
+import { css } from '@emotion/react'
+import { v } from '../../styles/variables'
+import DoubleBarLine from '../graphics/double-bar/double-bar';
 
-export const ThemeContext = React.createContext()
-const Layout = (props) => {
-  const [colorMode, rawSetColorMode] = React.useState(undefined);
-  React.useEffect(() => {
-    const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue(
-      INITIAL_COLOR_MODE_CSS_PROP
-    );
-    rawSetColorMode(initialColorValue);
-  }, []);
-  const contextValue = React.useMemo(() => {
-    function setColorMode(newValue) {
-      const root = window.document.documentElement;
-      localStorage.setItem(COLOR_MODE_KEY, newValue);
-      Object.entries(COLORS).forEach(([name, colorByTheme]) => {
-        const cssVarName = `--color-${name}`;
-        root.style.setProperty(cssVarName, colorByTheme[newValue]);
-      })
-      rawSetColorMode(newValue);
+const Container = styled.div`
+  height: 100vh;
+`
+const ScreenWidth = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: ${v.screenWidth};
+  margin: 0 auto;
+`
+const Body = styled.div`
+  
+  padding-top: 1em;
+  width: 100%;
+  height: 100%;
+`
+const wrapperCSS = css`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+`
+const BackgroundWrapper = styled.div`
+  ${wrapperCSS}
+  z-index: -1;
+`
+const OverlayWrapper = styled.div`
+  ${wrapperCSS}
+  z-index: 99;
+`
+const LineDivider = styled.div`
+  height: 2px;
+  background-color: ${colors.fuscousGray};
+`
+const Footer = styled.div`
+  width: 100%;
+  position: fixed;
+  bottom: 1em;
+`
+const PageTitle = styled.h1`
+
+  @keyframes slideRightText {
+    0% {
+      width: 0;
     }
-    return {
-      colorMode,
-      setColorMode,
-    };
-  }, [colorMode, rawSetColorMode]);
-
+    100% {
+      width: 100%;
+    }
+  }
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 1.35s ease slideRightText;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.8rem;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(78, 75, 66, 0.3) 0.14em 0.12em 0px;
+`
+const BarLine = styled.div`
+  border: 3px solid ${colors.taupeGray};
+  border-width: 0 0.25em 0 0.9em;
+  box-sizing: border-box;
+  padding: 0 6px 20px 0;
+  @keyframes expandDoubleBar {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  animation: 0.3s ease expandDoubleBar;
+  margin-right: 2rem;
+`
+const Content = styled.div`
+  display: flex;
+  height: calc(100% - 2.5em);
+`
+const ChildrenComponent = styled.div`
+  width: 100%;
+  overflow-y: scroll;
+`
+const Main = styled.div`
+  height: calc(100% - 30px - 16px - (2*4*16px*(77/300)) - 16px - 44.8px - (5*16px) - 8px) ;
+  
+  display: flex;
+  justify-content: center;
+  max-width: ${v.screenWidth};
+  margin: 0 auto;
+`
+// Just use overflow y with a custom scrollbar 
+// instead of worrying about footer
+const Layout = ({title, children}) => {
   return (
-    <ThemeContext.Provider value={contextValue}>
+    <React.Fragment>
       <Global styles={globalStyle} />
       <Helmet>
-        <title>{props.title}</title>
+        <PageTitle>Robert Chen</PageTitle>
       </Helmet>
-      <MobileHeader />
-      <SLayout>
-        <SContainer>
-          <SidebarRelative>
-            <SidebarContainer id='sidenav'>
-              <Sidebar />
-            </SidebarContainer>
-          </SidebarRelative>
-          <MainContainer>
-            <SMain>{props.children}</SMain>
-          </MainContainer>
-        </SContainer>
-      </SLayout>
-    </ThemeContext.Provider>
+      <BackgroundWrapper>
+        <Background color={colors.taupeGray} />
+      </BackgroundWrapper>
+      <OverlayWrapper>
+        <Overlay color="#000" />
+      </OverlayWrapper>
+      <Container>
+        <ScreenWidth>
+          <Nav />
+        </ScreenWidth>
+        <LineDivider />
+        <ScreenWidth>
+          <Divider />
+        </ScreenWidth>
+
+        <Main>
+
+          <Body>
+            <PageTitle>{title}</PageTitle>
+            <Content>
+              <BarLine></BarLine>
+              <ChildrenComponent>{children}</ChildrenComponent>
+            </Content>
+          </Body>
+
+        </Main>
+        
+        <Footer>
+          <LineDivider />
+          <ScreenWidth>
+            <Divider />
+          </ScreenWidth>
+        </Footer>
+      </Container>
+    </React.Fragment>
   )
 }
 

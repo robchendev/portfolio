@@ -1,38 +1,43 @@
 module.exports = {
   siteMetadata: {
     title: `Robert Chen`,
-    description: `Robert Chen Developer Portfolio Website`,
     siteUrl: `https://robchendev.com`
   },
-  plugins: ["gatsby-remark-embed-video", `gatsby-plugin-netlify`, "gatsby-plugin-emotion",
+  plugins: [
+    
+    "gatsby-remark-embed-video", `gatsby-plugin-netlify`, "gatsby-plugin-emotion",
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `GatsbyJS`,
+    //     short_name: `GatsbyJS`,
+    //     start_url: `/`,
+    //     background_color: `#f7f0eb`,
+    //     theme_color: `#a2466c`,
+    //     display: `standalone`,
+    //     icon: `src/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Fira Code\:400,500,700`,
-          `IBM Plex Sans\:400,500,700`,
+          `Roboto\:400,500,700`,
         ],
         display: 'swap'
       }
     },
-    { // Projects
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `p`,
-        path: `${__dirname}/src/p`,
-      },
-    },
+    // { // You can have multiple instances of this plugin
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `t`,
+    //     path: `${__dirname}/src/t`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              icon: false,
-              className: `anchorclass`,
-            },
-          },
           {
             resolve: `gatsby-remark-images`,
             options: {
