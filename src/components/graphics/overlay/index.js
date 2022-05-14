@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { colors } from '../../../styles/theme';
 
+// https://github.com/tommyquant/personal-website/blob/develop/packages/yorha/src/components/graphics/overlay/index.js
 const Overlay = ({
     className,
     color,
