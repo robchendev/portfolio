@@ -35,11 +35,11 @@ const DescriptionBox = styled.div`
 `
 const CardBox = styled.div`
   height: 100%;
-  color: ${colors.fuscousGray};
   background: ${colors.tana};
   transition: 0.15s ease;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
   :hover {
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+    
     ${ImageBox} {
       img {
         filter: sepia(0);

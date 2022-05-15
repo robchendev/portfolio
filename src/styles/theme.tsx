@@ -11,5 +11,5 @@ export const colors = {
   mongoose: '#bc9d83',
   makara: '#8b7e67',
   chestnutRose: '#cd664d',
-  taupeGrayRGBA: 'rgba(0, 0, 0, 0.06)'
+  taupeGrayRGBA: 'rgba(0, 0, 0, 0.05)'
 }

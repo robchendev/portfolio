@@ -53,7 +53,7 @@ const projects = [
 ]
 const Column = styled.div`
   float: left;
-  width: 25%;
+  width: ${100/4}%; // use same format for 3, 5, etc
   padding-right: 15px;
   padding-bottom: 15px;
 `
@@ -66,6 +66,7 @@ const ProjectsSpace = styled.div`
   width: 100%;
   height: 100%;
   margin-left: -8px;
+  margin-bottom: -12px;
 `
 
 const Projects = () => {
@@ -81,6 +82,7 @@ const Projects = () => {
             />
           </Column>
         ))}
+        
       </ProjectsSpace>
     </Layout>
   )

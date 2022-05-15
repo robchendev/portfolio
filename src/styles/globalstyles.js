@@ -12,6 +12,7 @@ export const globalStyle = css`
     background: ${colors.softAmber};
     font-family: 'Roboto', sans-serif;
     overflow-y: scroll;
+    color: ${colors.fuscousGray}
     //overflow-y: scroll; // Only scroll on projects
     /* font-family: 'Fredoka', sans-serif;
     letter-spacing: .6px;
