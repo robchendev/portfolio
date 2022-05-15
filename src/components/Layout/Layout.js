@@ -12,17 +12,17 @@ import { css } from '@emotion/react'
 import { v } from '../../styles/variables'
 import DoubleBarLine from '../graphics/double-bar/double-bar';
 
+const screenWidthStyles = css`
+  max-width: ${v.screenWidth};
+  margin: 0 auto;
+`
 const Container = styled.div`
   height: 100vh;
 `
 const ScreenWidth = styled.div`
-  display: flex;
-  justify-content: center;
-  max-width: ${v.screenWidth};
-  margin: 0 auto;
+  ${screenWidthStyles}
 `
 const Body = styled.div`
-  
   padding-top: 1em;
   width: 100%;
   height: 100%;
@@ -62,7 +62,7 @@ const PageTitle = styled.h1`
   }
   white-space: nowrap;
   overflow: hidden;
-  animation: 1.35s ease slideRightText;
+  animation: 1.2s ease slideRightText;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 2.8rem;
@@ -91,15 +91,22 @@ const Content = styled.div`
 `
 const ChildrenComponent = styled.div`
   width: 100%;
-  overflow-y: scroll;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  //overflow-y: scroll;
 `
 const Main = styled.div`
   height: calc(100% - 30px - 16px - (2*4*16px*(77/300)) - 16px - 44.8px - (5*16px) - 8px) ;
-  
+  ${screenWidthStyles}
+`
+const FullWidthDisplay = styled.div`
+  width: 100%;
+`
+const Resizable = styled.div`
+  max-height: 100%;
   display: flex;
-  justify-content: center;
-  max-width: ${v.screenWidth};
-  margin: 0 auto;
+  width: 100%;
 `
 // Just use overflow y with a custom scrollbar 
 // instead of worrying about footer
@@ -126,15 +133,19 @@ const Layout = ({title, children}) => {
         </ScreenWidth>
 
         <Main>
-
           <Body>
             <PageTitle>{title}</PageTitle>
             <Content>
-              <BarLine></BarLine>
-              <ChildrenComponent>{children}</ChildrenComponent>
+              <ChildrenComponent>
+                <Resizable>
+                  <BarLine />
+                  <FullWidthDisplay>
+                    {children}
+                  </FullWidthDisplay>
+                </Resizable>
+              </ChildrenComponent>
             </Content>
           </Body>
-
         </Main>
         
         <Footer>

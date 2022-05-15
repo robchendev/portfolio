@@ -6,6 +6,8 @@ import Layout from "../components/Layout/Layout"
 // Idea: Have bottom section with the controls show
 // icons for left click, right click and scroll
 
+
+
 const About = () => {
   return (
     <Layout title="About">
