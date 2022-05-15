@@ -115,7 +115,7 @@ const Layout = ({title, children}) => {
     <React.Fragment>
       <Global styles={globalStyle} />
       <Helmet>
-        <PageTitle>Robert Chen</PageTitle>
+        <title>Robert Chen</title>
       </Helmet>
       <BackgroundWrapper>
         <Background color={colors.taupeGray} />

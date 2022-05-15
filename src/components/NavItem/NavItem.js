@@ -16,6 +16,15 @@ const borderStyles = css`
 const TopBorder = styled.div`
   ${borderStyles};
   margin-top: 0;
+  @keyframes pageLoadBorder {
+    0% {
+      margin-top: -5px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+  animation: ${({ isActive }) => (isActive ? `0.3s ease pageLoadBorder` : `none`)};
 `
 const BottomBorder = styled.div`
   ${borderStyles};
@@ -119,9 +128,9 @@ const NavItem = ({ icon, title, isActive, link }) => {
   return (
     <BoxContainer>
       <Link to={link}>
-        <HoverContainer isActive={isActive}>
-          <ActiveBox isActive={isActive}/>
-          <TopBorder />
+        <HoverContainer isActive={isActive} >
+          <ActiveBox isActive={isActive} />
+          <TopBorder isActive={isActive} />
           <DarkSlider />
           <Box isActive={isActive}>
             <FocusText>
