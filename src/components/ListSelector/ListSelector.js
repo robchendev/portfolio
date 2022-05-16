@@ -82,8 +82,9 @@ const ListSelector = () => {
   let clickSound = null
   if (typeof window !== 'undefined') {
     clickSound = new Audio(clickSfx)
+    clickSound.volume = 0.3;
   }
-  clickSound.volume = 0.3;
+  
   const handleClick = () => {
     clickSound.play()
   }
