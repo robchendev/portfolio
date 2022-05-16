@@ -20,6 +20,7 @@ const Active = styled.div`
   transition: 0.2s ease width;
   z-index: 50;
   color: white;
+  pointer-events: none;
 `
 const Square = styled.div`
   display: inline-block;

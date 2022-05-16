@@ -7,7 +7,7 @@ const SvgWrapper = styled.div`
    svg {
       width: 4em;
    }
-   :not(:first-child) {
+   :not(:first-of-type) {
       margin-left: -0.5em;
    }
 `
