@@ -36,6 +36,7 @@ const DarkSlider = styled.div`
   width: 0;
   z-index: 3;
   transition: 0.2s ease width;
+  pointer-events: none;
 `
 
 // When IsActive, ActiveBox =

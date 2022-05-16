@@ -6,6 +6,7 @@ import { FaCode } from 'react-icons/fa'
 import { TiInfoLarge } from 'react-icons/ti'
 import DoubleBarLine from '../graphics/double-bar/double-bar'
 
+
 const Header = styled.header`
   padding-top: 1.5%;  
   display: grid;
@@ -18,6 +19,8 @@ const Header = styled.header`
 `
 
 const Nav = () => {
+  
+
   const location = useLocation().pathname
   const parentLocation = "/" + location.split('/')[1]
   return (

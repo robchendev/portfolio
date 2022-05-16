@@ -6,6 +6,8 @@ import BarlineWrapper from '../BarlineWrapper';
 import StyledButton from '../StyledButton';
 import ActiveBlock from '../ActiveBlock';
 
+import clickSfx from '../../sounds/click.mp3';
+
 const SelectorMenu = styled.div`
   margin-right: 1em;
 `
@@ -77,11 +79,18 @@ const selectors = [
 
 const ListSelector = () => {
 
+  let clickSound = new Audio(clickSfx)
+  clickSound.volume = 0.3;
+  const handleClick = () => {
+    clickSound.play()
+  }
+
   const [selected, setSelected] = useState(1) // id 1 default
   function handleSelect(id) {
     setSelected(id)
   } 
   useEffect(() => {
+    
     const allInfoMenus = document.getElementsByClassName('infoMenu')
     const allActiveBlocks = document.getElementsByClassName('activeBlock')
     for (let i = 0; i < allInfoMenus.length; i++) {
@@ -91,16 +100,28 @@ const ListSelector = () => {
     document.getElementById(`info${selected}`).style.display = "block"
     document.getElementById(`active${selected}`).style.display = "block"
     document.getElementById(`${selected}`).focus()
+    
   }, [selected])
-
-  // call a ActiveBox with an id of 'active${id}'
-
+  // if (typeof window !== 'undefined') {
+  //   window.onload = function() {
+  //     setTimeout(clickSound(),1000)
+  //   }
+  // }
   return (
-    <SplitMenu>
+    <SplitMenu id='interactionEvent'>
       <SelectorMenu>
-        <BarlineWrapper>
+        <BarlineWrapper >
           {selectors.map(({title, id}) => (
-            <Selectable id={id} onClick={() => handleSelect(id)}>
+            <Selectable 
+              id={id} 
+              
+              onClick={
+                () => {
+                  handleSelect(id);
+                  handleClick();
+                }
+              }
+            >
               <ActiveBlock 
                 classN='activeBlock' 
                 title={title}
