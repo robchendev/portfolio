@@ -79,10 +79,6 @@ const DividerContainer = styled.div`
    overflow: hidden;
 `
 
-const WindowWidthTest = styled.div`
-   background: red;
-`
-
 // Need to generate number of Epaulets to be shown based on screen width
 // Divider width is 4em + x*3.5em
 // Make sure full width is longer than that
