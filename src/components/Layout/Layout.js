@@ -10,7 +10,6 @@ import Divider from '../graphics/divider/divider'
 import Nav from '../Nav/Nav'
 import { css } from '@emotion/react'
 import { v } from '../../styles/variables'
-import DoubleBarLine from '../graphics/double-bar/double-bar';
 
 const screenWidthStyles = css`
   max-width: ${v.screenWidth};
@@ -23,7 +22,7 @@ const ScreenWidth = styled.div`
   ${screenWidthStyles}
 `
 const Body = styled.div`
-  padding-top: 1em;
+  padding-top: 0.5%;
   width: 100%;
   height: 100%;
 `
@@ -69,22 +68,7 @@ const PageTitle = styled.h1`
   letter-spacing: 0.1em;
   text-shadow: rgba(78, 75, 66, 0.3) 0.14em 0.12em 0px;
 `
-const BarLine = styled.div`
-  border: 3px solid ${colors.taupeGray};
-  border-width: 0 0.25em 0 0.9em;
-  box-sizing: border-box;
-  padding: 0 6px 20px 0;
-  @keyframes expandDoubleBar {
-    0% {
-      transform: scaleY(0);
-    }
-    100% {
-      transform: scaleY(1);
-    }
-  }
-  animation: 0.3s ease expandDoubleBar;
-  margin-right: 2rem;
-`
+
 const Content = styled.div`
   display: flex;
   height: calc(100% - 2.5em);
@@ -97,16 +81,8 @@ const ChildrenComponent = styled.div`
   //overflow-y: scroll;
 `
 const Main = styled.div`
-  height: calc(100% - 30px - 16px - (2*4*16px*(77/300)) - 16px - 44.8px - (5*16px) - 8px) ;
+  height: calc(100% - 30px - 0.5% - (2*4*16px*(77/300)) - 16px - 44.8px - (5*16px) - 8px) ;
   ${screenWidthStyles}
-`
-const FullWidthDisplay = styled.div`
-  width: 100%;
-`
-const Resizable = styled.div`
-  max-height: 100%;
-  display: flex;
-  width: 100%;
 `
 // Just use overflow y with a custom scrollbar 
 // instead of worrying about footer
@@ -137,12 +113,11 @@ const Layout = ({title, children}) => {
             <PageTitle>{title}</PageTitle>
             <Content>
               <ChildrenComponent>
-                <Resizable>
-                  <BarLine />
-                  <FullWidthDisplay>
+                
+                  
                     {children}
-                  </FullWidthDisplay>
-                </Resizable>
+                  
+                
               </ChildrenComponent>
             </Content>
           </Body>

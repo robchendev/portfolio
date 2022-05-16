@@ -8,10 +8,34 @@ export const globalStyle = css`
     padding: 0;
     box-sizing: border-box;
   }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.fuscousGray}; 
+    background-clip: content-box;
+  }
+  
+
+
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${colors.fuscousGray};
+    background-clip: content-box;
+  }
   body {
     background: ${colors.softAmber};
     font-family: 'Roboto', sans-serif;
-    overflow-y: scroll;
     color: ${colors.fuscousGray}
     //overflow-y: scroll; // Only scroll on projects
     /* font-family: 'Fredoka', sans-serif;

@@ -4,10 +4,11 @@ import { v } from '../../styles/variables'
 import styled from '@emotion/styled'
 import { colors } from '../../styles/theme'
 
-
 const ImageBox = styled.div`
   margin-bottom: -5px;
   img {
+    
+    height: 100%;
     width: 100%;
     filter: sepia(1);
     transition: 0.1s ease;

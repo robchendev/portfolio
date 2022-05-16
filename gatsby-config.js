@@ -67,14 +67,16 @@ module.exports = {
           },
         ],
       },
-    }, "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-remark-images", {
+    }, "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-remark-images", 
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "images",
         "path": "./src/images/"
       },
       __key: "images"
-    }, {
+    }, 
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "pages",

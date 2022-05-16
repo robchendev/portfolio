@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { useLocation } from "@reach/router";
-import { colors } from '../../styles/theme'
+import { useLocation } from "@reach/router"
 import NavItem from '../NavItem/NavItem'
 import { FaCode } from 'react-icons/fa'
 import { TiInfoLarge } from 'react-icons/ti'
-import { HiMusicNote } from 'react-icons/hi'
-import DoubleBarLine from '../graphics/double-bar/double-bar';
+import DoubleBarLine from '../graphics/double-bar/double-bar'
 
 const Header = styled.header`
-  padding-top: 30px;  
+  padding-top: 1.5%;  
   display: grid;
   grid-auto-rows: max-content;
   grid-gap: 1rem;
@@ -39,14 +37,14 @@ const Nav = () => {
 
 const navLinks = [
   {
-    title: 'projects',
-    icon: <FaCode />,
+    title: 'about',
+    icon: <TiInfoLarge />,
     link: '/',
   },
   {
-    title: 'about',
-    icon: <TiInfoLarge />,
-    link: '/about',
+    title: 'projects',
+    icon: <FaCode />,
+    link: '/projects',
   },
 ]
 
