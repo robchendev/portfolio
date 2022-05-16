@@ -79,7 +79,10 @@ const selectors = [
 
 const ListSelector = () => {
 
-  let clickSound = new Audio(clickSfx)
+  let clickSound = null
+  if (typeof window !== 'undefined') {
+    clickSound = new Audio(clickSfx)
+  }
   clickSound.volume = 0.3;
   const handleClick = () => {
     clickSound.play()
